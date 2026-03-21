@@ -8,5 +8,5 @@ __SQL Firebid__: SQL система управления базами данны
 __Code Gear Delphi 2007__: гибкость, широкий функционал для обработки данных. Возможность использовать разнообразные библиотеки.      
 
 Схема базы данных и связи таблиц приведены в файле [__spds-structure.pdf__](/spds-structure.pdf)
-Примеры определения таблиц: ___Complect___, ___Files___  
-Примеры определения хранимых процедур: ___FINDMARKS.sp___, ___MOVEOPERCOMPLECT.sp___  
+Примеры определения таблиц: [__Complect__](/Complect.sql), [__Files__](/Files.sql)  
+Примеры определения хранимых процедур: [__FINDMARKS.sp__](/FINDMARKS.sp), [__MOVEOPERCOMPLECT.sp__](/Complect.sql)  
