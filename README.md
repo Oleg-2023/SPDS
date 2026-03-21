@@ -7,6 +7,6 @@
 __SQL Firebid__: SQL система управления базами данных, клон Interbase, DDL(Data Definition Language) аналогичен Postgres.   
 __Code Gear Delphi 2007__: гибкость, широкий функционал для обработки данных. Возможность использовать разнообразные библиотеки.      
 
-Схема базы данных и связи таблиц приведены в файле ___spds-structure.pdf__(/spds-structure.pdf)
+Схема базы данных и связи таблиц приведены в файле [__spds-structure.pdf__](/spds-structure.pdf)
 Примеры определения таблиц: ___Complect___, ___Files___  
 Примеры определения хранимых процедур: ___FINDMARKS.sp___, ___MOVEOPERCOMPLECT.sp___  
