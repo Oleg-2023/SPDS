@@ -1,7 +1,7 @@
 # SPDS
 ## Краткий обзор системы передачи и хранения проектно-сметной документации
 ## Общий вид. Рабочее место администратора.
-![image](https://github.com/user-attachments/assets/93a3698d-1a3f-4ef9-bcce-172ce6933d74)
+![image](images/Admin.jpg)
 
 ## Технологический стек:  
 __SQL Firebid__: SQL система управления базами данных, клон Interbase, DDL(Data Definition Language) аналогичен Postgres.   
