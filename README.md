@@ -11,4 +11,4 @@ __Code Gear Delphi 2007__: гибкость, широкий функционал
 
 Схема базы данных и связи таблиц приведены в файле [__spds-structure.pdf__](files/spds-structure.pdf)
 Примеры определения таблиц: [__Complect__](./files/Complect.sql), [__Files__](files/Files.sql)  
-Примеры определения хранимых процедур: [__FINDMARKS.sp__](files/FINDMARKS.sp), [__MOVEOPERCOMPLECT.sp__](files/Complect.sql)  
+Примеры определения хранимых процедур: [__FINDMARKS.sp__](files/FINDMARKS.sp), [__MOVEOPERCOMPLECT.sp__](files/__MOVEOPERCOMPLECT.sp)  
