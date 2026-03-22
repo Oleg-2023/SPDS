@@ -24,12 +24,12 @@ declare variable FSIZE bigint;
 begin
   /* Procedure Text */
   RES=0;
-  /* Перенести Название комплекта */
+  /* ГЏГҐГ°ГҐГ­ГҐГ±ГІГЁ ГЌГ Г§ГўГ Г­ГЁГҐ ГЄГ®Г¬ГЇГ«ГҐГЄГІГ  */
   SELECT CAST(name AS VARCHAR(240)) from opercomplect WHERE id=:OPERCOMPLECT_ID INTO :name1;
   if (not(name1 is NULL)and(TRIM(name1)<>'')) then
     UPDATE complect c SET c.name=:name1 WHERE (c.id=:COMPLECT_ID);
   /**/
-  /*Вставляем все оперативные файлы в таблицу файлы*/
+  /*Г‚Г±ГІГ ГўГ«ГїГҐГ¬ ГўГ±ГҐ Г®ГЇГҐГ°Г ГІГЁГўГ­Г»ГҐ ГґГ Г©Г«Г» Гў ГІГ ГЎГ«ГЁГ¶Гі ГґГ Г©Г«Г»*/
   FOR SELECT o.id, o.name, o.sheet1, o.sheet2, o.ftype, o.fdata, o.opertime, o.createtime, o.author_id, o.operator_id, o.fsize
       from operfile o
       where (o.opercomplect_id=:opercomplect_id)
@@ -39,7 +39,7 @@ begin
     insert into "FILES"
        values (:files_id, :complect_id,0, :name, :sheet1, :sheet2, (select exttype_id from getftype(:ftype)), :fdata, 1, :opertime, :createtime,
                 :author_id, :operator_id, 1, :fsize);
-    --Вставляем все оперативные файлы отправки в таблицу отправок
+    --Г‚Г±ГІГ ГўГ«ГїГҐГ¬ ГўГ±ГҐ Г®ГЇГҐГ°Г ГІГЁГўГ­Г»ГҐ ГґГ Г©Г«Г» Г®ГІГЇГ°Г ГўГЄГЁ Гў ГІГ ГЎГ«ГЁГ¶Гі Г®ГІГЇГ°Г ГўГ®ГЄ
      FOR SELECT o.name, o.ftype, o.fdata, o.createtime, o.opertime,  o.operator_id, o.fsize
         from operoutfiles o
         where (o.operfile_id=:operfile_id)
@@ -51,10 +51,10 @@ begin
                 :author_id, :operator_id, 1, :DOCOUTREESTR_ID, :FSIZE);
 
         END
-    --Удаляем все оперативные файлы отправки для текущего оперфайла
+    --Г“Г¤Г Г«ГїГҐГ¬ ГўГ±ГҐ Г®ГЇГҐГ°Г ГІГЁГўГ­Г»ГҐ ГґГ Г©Г«Г» Г®ГІГЇГ°Г ГўГЄГЁ Г¤Г«Гї ГІГҐГЄГіГ№ГҐГЈГ® Г®ГЇГҐГ°ГґГ Г©Г«Г 
     DELETE FROM OPEROUTFILES WHERE operfile_id=:operfile_id;
   END
-  --Удаляем все оперативные файлы для оперкомплекта
+  --Г“Г¤Г Г«ГїГҐГ¬ ГўГ±ГҐ Г®ГЇГҐГ°Г ГІГЁГўГ­Г»ГҐ ГґГ Г©Г«Г» Г¤Г«Гї Г®ГЇГҐГ°ГЄГ®Г¬ГЇГ«ГҐГЄГІГ 
   DELETE FROM OPERFILE WHERE OPERCOMPLECT_ID=:OPERCOMPLECT_ID;
   DELETE FROM OPERCOMPLECT WHERE ID=:OPERCOMPLECT_ID;
   RES=1;
